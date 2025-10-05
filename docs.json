@@ -67,8 +67,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Discord",
+      "href": "https://angels.lat/discord"
     }
   },
   "contextual": {
