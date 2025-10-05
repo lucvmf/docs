@@ -27,31 +27,12 @@
               "essentials/settings",
               "essentials/navigation"
             ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
           }
         ]
       }
     ],
     "global": {
-      "anchors": [
-
-      ]
+      "anchors": []
     }
   },
   "logo": {
@@ -59,28 +40,14 @@
     "dark": "https://r2.angels.lat/profile.png"
   },
   "navbar": {
-    "links": [
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Discord",
       "href": "https://angels.lat/discord"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
   "footer": {
-    "socials": {
-    }
+    "socials": {}
   }
 }
