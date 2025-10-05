@@ -7,26 +7,20 @@ description: "Welcome to the Angels bot documentation."
 
 Below are some essential features that help enhance and secure your server:
 
-cards
-[
-  {
-    "title": "Moderation",
-    "description": "Keep your server safe with tools like mute, kick, ban, and timeout.",
-    "href": "/guides/moderation"
-  },
-  {
-    "title": "Voicemaster",
-    "description": "Allow members to create and manage temporary voice channels.",
-    "href": "/guides/voicemaster"
-  },
-  {
-    "title": "Auto-Moderation",
-    "description": "Block spam, bad words, and harmful content automatically.",
-    "href": "/guides/automod"
-  },
-  {
-    "title": "Server Utilities",
-    "description": "Revamp your server with commands for roles, channels, and more.",
-    "href": "/guides/utilities"
-  }
-]
+<CardGroup cols={2}>
+  <Card title="Moderation" icon="shield" href="/guides/moderation">
+    Keep your server safe with tools like mute, kick, ban, and timeout.
+  </Card>
+
+  <Card title="Voicemaster" icon="microphone" href="/guides/voicemaster">
+    Allow members to create and manage temporary voice channels.
+  </Card>
+
+  <Card title="Auto-Moderation" icon="ban" href="/guides/automod">
+    Block spam, bad words, and harmful content automatically.
+  </Card>
+
+  <Card title="Server Utilities" icon="tools" href="/guides/utilities">
+    Revamp your server with commands for roles, channels, and more.
+  </Card>
+</CardGroup>
