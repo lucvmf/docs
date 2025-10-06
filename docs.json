@@ -19,13 +19,6 @@
               "index",
               "donation"
             ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
           }
         ]
       }
