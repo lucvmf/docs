@@ -1,1 +1,42 @@
-{ "$schema": "https://mintlify.com/docs.json", "theme": "mint", "name": "Angels Docs", "colors": { "primary": "#231CEB", "light": "#99AAFF", "dark": "#242F66" }, "favicon": "/favicon.svg", "navigation": { "tabs": [ { "tab": "Guides", "groups": [ { "group": "Overview", "pages": [ "index", "donation" ] } ] } ], "global": { "anchors": [] } }, "logo": { "light": "https://r2.angels.lat/profile.png", "dark": "https://r2.angels.lat/profile.png" }, "navbar": { "links": [], "primary": { "type": "button", "label": "Discord", "href": "https://angels.lat/discord" } }, "footer": { "socials": {} } }
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Angels Docs",
+  "colors": {
+    "primary": "#231CEB",
+    "light": "#99AAFF",
+    "dark": "#242F66"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["index", "donation"]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": []
+    }
+  },
+  "logo": {
+    "light": "https://r2.angels.lat/profile.png",
+    "dark": "https://r2.angels.lat/profile.png"
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Discord",
+      "href": "https://angels.lat/discord"
+    }
+  },
+  "footer": {
+    "socials": {}
+  }
+}
