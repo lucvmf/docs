@@ -1,218 +1,49 @@
 ---
+title: "Donation Perks"
+description: "Support our project and unlock exclusive rewards"
+---
 
-title: VoiceMaster
-description: "A lightweight, accessible React component for recording, playing and managing voice clips in your app."
-slug: /components/voicemaster
-tags: [components, audio, voice]
---------------------------------
+## Why Donate?
 
-# VoiceMaster
-
-**VoiceMaster** is a small, accessible React component for recording, playing, uploading, and managing short voice clips. It's designed to be plug-and-play with minimal styles so you can theme it for your product.
+Your donations, help keep our servers alive and running, and help us cover our costs towards the payments. Below are our features that we give to you, our community, for donating.
 
 ---
 
-## Installation
+## Donation Tiers
 
-Install the package (replace `voicemaster` with the package name you use):
+<AccordionGroup>
+  <Accordion title="Teir 1 — $5/month ($15 Lifetime)" icon="heart">
+    - Donor role in our Discord server  
+    - Early access to small updates, announcements & features
+    - Access to AI Commaands
+  </Accordion>
 
-```bash
-npm install voicemaster
-# or
-yarn add voicemaster
-```
-
-If you bundle for the web, make sure your build supports Web Audio / MediaDevices APIs.
-
----
-
-## Usage
-
-### Basic
-
-```jsx
-import React from 'react'
-import VoiceMaster from 'voicemaster'
-
-export default function Demo() {
-  return (
-    <VoiceMaster
-      maxDuration={30} // seconds
-      onSave={(blob, meta) => console.log('saved', blob, meta)}
-      onError={(err) => console.error(err)}
-    />
-  )
-}
-```
-
-### Controlled
-
-```jsx
-import React, { useRef } from 'react'
-import VoiceMaster from 'voicemaster'
-
-export default function ControlledExample() {
-  const vmRef = useRef(null)
-
-  return (
-    <div>
-      <VoiceMaster ref={vmRef} />
-      <button onClick={() => vmRef.current?.startRecording()}>Start</button>
-      <button onClick={() => vmRef.current?.stopRecording()}>Stop</button>
-    </div>
-  )
-}
-```
+  <Accordion title="Teir 2 — $10/month ($30 Lifetime)" icon="star">
+    - All **Teir 1** perks  
+    - No AI Command cooldowns 
+    - Priority feedback channel in Discord  
+    - Special badge on your profile/ ,ui command
+    - Custom lastFM embed (soon)
+  </Accordion>
+</AccordionGroup>
 
 ---
 
-## Props
+## How to Donate
 
-| Prop          |                   Type |     Default | Description                               |                     |
-| ------------- | ---------------------: | ----------: | ----------------------------------------- | ------------------- |
-| `maxDuration` |               `number` |        `60` | Maximum recording duration in seconds     |                     |
-| `minDuration` |               `number` |       `0.5` | Minimum recording duration in seconds     |                     |
-| `autoPlay`    |              `boolean` |     `false` | Whether to autoplay recordings after stop |                     |
-| `format`      |                `"webm" |      "wav"` | `"webm"`                                  | Output audio format |
-| `onSave`      | `(blob, meta) => void` | `undefined` | Called when a recording is saved          |                     |
-| `onError`     |      `(error) => void` | `undefined` | Error callback                            |                     |
-| `disabled`    |              `boolean` |     `false` | Disable all controls                      |                     |
-| `className`   |               `string` |        `''` | Extra className for wrapper               |                     |
-
-> Tip: For file uploads, convert the Blob to a `File` with `new File([blob], 'clip.webm', { type: blob.type })`.
+<CardGroup cols={2}>
+  <Card title="Discord" icon="discord" href="https://discord.gg/saphire">
+    Check out our discord & make a ticket to donate
+  </Card>
+</CardGroup>
 
 ---
 
-## Events / Callbacks
-
-* `onSave(blob, meta)` — fired when user saves a recording. `meta` contains `{ duration, format, size, createdAt }`.
-* `onCancel()` — fired when the user cancels a recording.
-* `onStart()` — when recording starts.
-* `onStop()` — when recording stops.
-* `onPermissionDenied()` — when the browser denies microphone permissions.
-
----
-
-## Imperative API (ref)
-
-If you need imperative control, forward a ref to the component and call methods:
-
-```ts
-interface VoiceMasterRef {
-  startRecording: () => Promise<void>
-  stopRecording: () => Promise<Blob | null>
-  play: (blob: Blob) => void
-  pause: () => void
-  reset: () => void
-}
-```
-
----
-
-## Examples
-
-### Upload to server
-
-```jsx
-async function handleSave(blob, meta) {
-  const file = new File([blob], `clip.${meta.format}`, { type: blob.type })
-  const fd = new FormData()
-  fd.append('file', file)
-  fd.append('duration', String(meta.duration))
-
-  await fetch('/api/upload-voice', { method: 'POST', body: fd })
-}
-
-<VoiceMaster onSave={handleSave} />
-```
-
-### Show waveform preview
-
-> Note: VoiceMaster exports a `useWaveform(blob)` hook for quick waveform generation.
-
-```jsx
-import { useState } from 'react'
-import VoiceMaster, { useWaveform } from 'voicemaster'
-
-function WaveformExample() {
-  const [blob, setBlob] = useState(null)
-  const waveform = useWaveform(blob)
-
-  return (
-    <div>
-      <VoiceMaster onSave={(b) => setBlob(b)} />
-      {waveform && <canvas data-waveform />}
-    </div>
-  )
-}
-```
-
----
-
-## Styling
-
-VoiceMaster is intentionally unopinionated about styles. It exposes class names you can target:
-
-* `.voicemaster` — root wrapper
-* `.voicemaster__controls` — controls container
-* `.voicemaster__record` — record button
-* `.voicemaster__timer` — timer element
-* `.voicemaster__waveform` — waveform canvas
-
-Example CSS snippet:
-
-```css
-.voicemaster { display: inline-flex; gap: 8px; align-items: center }
-.voicemaster__record { background: var(--primary); border-radius: 9999px }
-```
-
----
-
-## Accessibility
-
-VoiceMaster focuses on accessibility:
-
-* All interactive elements are keyboard-focusable and have descriptive `aria-label`s.
-* The record button toggles `aria-pressed` while recording.
-* Errors and permission prompts are announced via `role="status"` live region.
-
-If you change the UI, keep these attributes intact to preserve a11y.
-
----
-
-## Browser support & permissions
-
-* Requires `MediaDevices.getUserMedia` support (modern browsers). Mobile Safari has partial support; iOS 15+ is recommended.
-* Gracefully degrades: if microphone isn't available the component shows a clear message and `onPermissionDenied` is called.
-
----
-
-## Troubleshooting
-
-* **No microphone found** — confirm the browser has microphone permissions and the device audio input is plugged in.
-* **Saved file fails to play** — ensure the chosen `format` is supported by the browser/player.
-* **Large files** — lower `maxDuration` or transcode server-side.
-
----
-
-## FAQ
-
-**Q: Does it work offline?**
-A: Recording works without an internet connection, but uploading requires connectivity.
-
-**Q: Can it record longer than 60s?**
-A: Yes — set `maxDuration` prop, but be mindful of file size and encoder support.
-
----
-
-## Changelog
-
-* `1.0.0` — initial public release
-
----
-
-If you'd like, I can also:
-
-* generate a component preview (React) for the docs page,
-* add interactive playground snippets for Mintlify,
-* or export this as a `.mdx` file for you to download.
+<Info>
+  **For more information on donation perks, check [here](https://angels.lat/premium).**
+</Info>
+  
+<Note>
+  **Thank you for supporting the project.**  
+  Every donation helps keep our bot up for our community.
+</Note>
