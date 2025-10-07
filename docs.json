@@ -16,6 +16,16 @@
           {
             "group": "Overview",
             "pages": ["index", "donation"]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              {
+                "name": "VoiceMaster",
+                "icon": "voice",
+                "href": "/features/voicemaster"
+              }
+            ]
           }
         ]
       }
