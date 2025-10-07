@@ -19,13 +19,7 @@
           },
           {
             "group": "Features",
-            "pages": [
-              {
-                "name": "VoiceMaster",
-                "icon": "voice",
-                "href": "/features/voicemaster"
-              }
-            ]
+            "pages": ["features/voicemaster"]
           }
         ]
       }
