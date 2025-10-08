@@ -15,17 +15,11 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["index", "donation"]
+            "pages": ["index", "overview/donate", "overview/customization"]
           },
           {
             "group": "Features",
-            "pages": [
-              {
-                "name": "VoiceMaster",
-                "icon": "voice",
-                "href": "/features/voicemaster"
-              }
-            ]
+            "pages": ["features/voicemaster", "features/fakepermissions"]
           }
         ]
       }

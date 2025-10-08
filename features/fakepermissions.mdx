@@ -1,0 +1,67 @@
+---
+title: "Fake Permissions"
+description: "Tutorial and features for fake permissions"
+---
+
+## Setup Tutorial
+
+Basic subcommands for fakepermissions
+
+- `,fakepermissions list` - List all fake permissions
+- `,fakepermissions revoke` - Remove a permission from a role
+- `,fakepermissions grant` - Grant a permission to a role
+- `,fakepermissions permissions` - Show the permissions for a role
+- `,fakepermissions reset` - Reset all permissions for a singular role
+- `,fakepermissions wipe` - Reset permissions for all roles in the server
+
+<Note>
+The prefix can vary depending on your server's set prefix.
+</Note>
+
+<Info>
+You can also do `,help {command}` to see how to use these commands.
+</Info>
+
+## Recommended Permissions
+
+<Tabs>
+  <Tab title="Moderator">
+    - `MANAGE_MESSAGES` - Delete messages
+    - `MODERATE_MEMBERS` - Timeout members
+    - `MANAGE_NICKNAMES` - Change nicknames
+    - `KICK_MEMBERS` - Kick members
+
+    ```bash
+    ,fakepermissions grant (role) MANAGE_MESSAGES, MODERATE_MEMBERS, MANAGE_NICKNAMES, KICK_MEMBERS
+    ```
+  </Tab>
+
+  <Tab title="Administrator">
+    - `MANAGE_MESSAGES` - Delete messages
+    - `MODERATE_MEMBERS` - Timeout members
+    - `MANAGE_NICKNAMES` - Change nicknames
+    - `MANAGE_ROLES` - Manage roles
+    - `BAN_MEMBERS` - Ban members
+    - `KICK_MEMBERS` - Kick members
+
+    ```bash
+    ,fakepermissions grant (role) MANAGE_MESSAGES, MODERATE_MEMBERS, MANAGE_NICKNAMES, MANAGE_ROLES, BAN_MEMBERS, KICK_MEMBERS
+    ```
+  </Tab>
+
+  <Tab title="Co-Owner">
+    - `ADMINISTRATOR` - Use all moderation commands
+
+    ```bash
+    ,fakepermissions grant (role) ADMINISTRATOR
+    ```
+  </Tab>
+</Tabs>
+
+## Resetting all fake permissions
+
+If you would like to reset Fake Permissions, you can simply run:
+
+```bash
+,fakepermissions wipe
+```
